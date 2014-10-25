@@ -230,6 +230,11 @@ END
 	invoke-rc.d inetutils-syslogd start
 }
 
+function install_mysqltuner {
+	# Just check mysqltuner install
+	check_install mysqltuner mysqltuner
+}
+
 function install_mysql {
 
 	# Install the MySQL packages
@@ -1277,6 +1282,7 @@ system)
 	install_iotop
 	install_iftop
 	install_syslogd
+	install_mysqltuner
 	apt_clean
 	;;
 *)
