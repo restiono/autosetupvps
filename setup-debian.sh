@@ -124,6 +124,10 @@ function install_vim {
 	check_install vim vim
 }
 
+function install_mysqltuner {
+	check_install mysqltuner mysqltuner
+}
+
 function install_dropbear {
 	if [ -z "$1" ]
 	then
@@ -228,11 +232,6 @@ END
 END
 
 	invoke-rc.d inetutils-syslogd start
-}
-
-function install_mysqltuner {
-	# Just check mysqltuner install
-	check_install mysqltuner mysqltuner
 }
 
 function install_mysql {
@@ -477,8 +476,8 @@ function install_site {
 	mkdir /var/www/$1/public
 
 	# Setup default index.html file
-	cat > "/var/www/$1/public/index.html" <<END
-Hello World
+	cat > "/var/www/$1/public/index.php" <<END
+<?php print "Halo Dunia!"; ?>
 END
 
 	# Setup test phpinfo.php file
@@ -491,7 +490,7 @@ server {
 	listen 80;
 	server_name www.$1 $1;
 	root /var/www/$1/public;
-	index index.html index.htm index.php;
+	index index.php index.html index.htm;
 	client_max_body_size 32m;
 
 	access_log  /var/www/$1/access.log;
