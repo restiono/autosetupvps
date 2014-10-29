@@ -80,3 +80,4 @@ ln -s /etc/nginx/sites-available/phpmyadmin.conf /etc/nginx/sites-enabled/phpmya
 invoke-rc.d nginx restart
 invoke-rc.d php5-fpm restart
 print_info "PHPMyAdmin sudah terinstall di /var/www/phpmyadmin. Akses dengan namadomain.com:81 atau IP_ANDA:81 dari browser."
+print_info "Otentifikasi pertama, user: pengguna | password: qwertyuiop"
