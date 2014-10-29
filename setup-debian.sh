@@ -736,6 +736,7 @@ function install_iptables {
 
 # Allows HTTP and HTTPS connections from anywhere (the normal ports for websites)
 -A INPUT -p tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp --dport 81 -j ACCEPT
 -A INPUT -p tcp --dport 443 -j ACCEPT
 
 # UN-COMMENT THESE IF YOU USE INCOMING MAIL!
