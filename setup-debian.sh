@@ -1209,6 +1209,7 @@ check_sanity
 case "$1" in
 mysql)
 	install_mysql
+	install_mysqltuner
 	;;
 exim4)
 	install_exim4
@@ -1282,7 +1283,6 @@ system)
 	install_iotop
 	install_iftop
 	install_syslogd
-	install_mysqltuner
 	apt_clean
 	;;
 *)
